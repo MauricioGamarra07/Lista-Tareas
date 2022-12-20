@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AñadirTarea({crearTarea}) {
+function AñadirTarea({ crearTarea, setId, id }) {
 
     const nombreTarea = document.getElementById("tarea");
 
@@ -14,7 +14,9 @@ function AñadirTarea({crearTarea}) {
                 /* console.log("Nombre de Tarea: " + tarea); */
                 nombreTarea.value = "";
                 /* console.log(nuevaTarea); */
-                crearTarea(tarea);
+                setId(id + 1);
+                /* console.log(id); */
+                crearTarea(tarea, id);
             }}>Añadir</button>
         </div>
     )
